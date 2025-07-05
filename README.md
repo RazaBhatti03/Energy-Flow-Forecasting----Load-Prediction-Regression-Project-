@@ -110,14 +110,25 @@ Energy demand forecasting helps:
 
 ---
 
-## Results & Insights
+## 📈 Results & Performance
 
-- Final Model: **RandomForestRegressor**
-- **Test R² Score**: `94.08%`
-- Top features:
-  - `diffuse flows`, `general diffuse flows`, `Temperature`
-- Energy usage peaks in specific hours and weekdays
-- Minimal impact from `Wind Speed` and `is_weekend`
+Below is the comparison of model performance **before and after feature engineering & hyperparameter tuning**:
+
+| Metric                | Baseline Model: Decision Tree | Final Model: Random Forest |
+|------------------------|------------------------------|-----------------------------|
+| R² Score (Train)       | 100.00%                      | 99.60%                     |
+| R² Score (Test)        | 94.01%                       | 97.28%                     |
+| Mean Squared Error     | 3,039,939.14                 | 1,381,976.13               |
+| Mean Absolute Error    | 1,003.55                     | 787.86                     |
+| R² Score (as float)    | 0.940                        | 0.973                      |
+| Top Features           | `diffuse flows`, `general diffuse flows`, `Temperature` | Same (confirmed via model) |
+
+### 🚀 Key Improvements:
+- R² score on test data improved from **94.01% → 97.28%**
+- MSE reduced by **~54.5%**, showing significantly lower prediction error
+- MAE dropped from **1,003.55 to 787.86**, indicating more accurate predictions
+- Final model is more generalized and avoids overfitting (better test vs train match)
+
 
 ---
 
